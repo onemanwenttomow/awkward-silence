@@ -10,7 +10,6 @@ startBtn.addEventListener('click', () => {
   navigator.mediaDevices
     .getUserMedia({
       audio: true,
-      video: true,
     })
     .then(function (stream) {
       const audioContext = new AudioContext();

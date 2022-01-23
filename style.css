@@ -63,7 +63,7 @@ button {
 
 .pulse {
   transform: scale(1);
-  animation: pulse 0.5s infinite;
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
