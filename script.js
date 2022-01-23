@@ -3,6 +3,7 @@ const randomTopic = document.getElementById('random-topic');
 const startBtn = document.getElementById('start-btn');
 const reStartBtn = document.getElementById('restart-btn');
 const timerContainer = document.getElementById('timer-container');
+const loading = document.querySelector('.loading');
 
 startBtn.addEventListener('click', () => {
   startBtn.style.display = 'none';
@@ -67,11 +68,11 @@ startBtn.addEventListener('click', () => {
 });
 
 function getRandomTopic() {
-  randomTopic.innerHTML = 'Fetching random topic...';
-  randomTopic.classList.add('pulse');
+  loading.style.display = 'flex';
   setTimeout(() => {
     randomTopic.innerHTML = topics.split('\n')[Math.floor(Math.random() * 335)];
     randomTopic.classList.remove('pulse');
+    loading.style.display = 'none';
     reStartBtn.style.display = 'block';
   }, 2000);
 }
